@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javaweb.system.mapper.LoginLogMapper">
+
+    <!-- 创建系统登录日志 -->
+    <insert id="insertLoginLog" parameterType="com.javaweb.system.entity.LoginLog">
+		insert into sys_login_log (title, username, login_ip, login_location, browser, os, status, type, note, create_time)
+		values (#{title}, #{username}, #{loginIp}, #{loginLocation}, #{browser}, #{os}, #{status}, #{type}, #{note}, sysdate()  )
+	</insert>
+
+</mapper>

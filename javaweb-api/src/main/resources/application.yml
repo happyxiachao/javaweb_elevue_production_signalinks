@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: @package.environment@
+
+  # 服务模块
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: false
+
+  # 自定义国际化配置
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages
+    encoding: UTF-8
+
+# MyBatis
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  # 实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: com.javaweb.**.mapper
+  configuration:
+    map-underscore-to-camel-case: true
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
